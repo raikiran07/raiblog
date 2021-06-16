@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .container{
+            width:80%;
+            margin:2rem auto;
+            text-align:center;
+        }
+        .color{
+            width:100px;
+            height:50px;
+            /*border:1px solid black;*/
+            display:inline-block;
+            cursor:pointer;
+        }
+        .center{
+            max-width:200px;
+            height:200px;
+            //background:black;
+            margin:3em auto;
+            border-radius:50%;
+            
+        }
+        
+        .red{
+            background:red;
+        }
+        .blue{
+            background:blue;
+        }
+        .yellow{
+            background:yellow;
+        }
+        .black{
+            background:black;
+        }
+    </style>
+</head>
+<body>
+   <div class="container">
+       <div class="color red"></div>
+        <div class="color blue"></div>
+              <div class="color yellow"></div>
+                     <div class="color black"></div>
+        
+        <div class="center"></div>
+
+
+
+   </div>
+   <script>
+       
+       const red = document.querySelector(".red");
+       const blue = document.querySelector(".blue");
+       const yellow = document.querySelector(".yellow");
+       const black = document.querySelector(".black");
+       
+       const center = document.querySelector(".center");
+       const selectedColor = (color) =>{
+           return window.getComputedStyle(color).backgroundColor;
+       } 
+       
+       
+       const colorChange = (element,color)=>{
+           return element.addEventListener('mouseenter',()=>{
+               center.style.backgroundColor = color;
+           })
+           
+       }
+       colorChange(red,selectedColor(red));
+       colorChange(blue,selectedColor(blue));
+       colorChange(yellow,selectedColor(yellow));
+       colorChange(black,selectedColor(black));
+       
+       
+    </script>
+    
+</body>
+</html>

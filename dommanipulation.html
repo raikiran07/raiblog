@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .container{
+            width:80%;
+            margin:4em auto;
+            text-align:center;
+        }
+        .color{
+            width:100px;
+            height:30px;
+            display:inline-block;
+        }
+        .blue{
+            background:blue;
+        }
+        .green{
+            background:green;
+        }
+        .yellow{
+            background:yellow;
+        }
+        .red{
+            background:red;
+        }
+        .pink{
+            background:pink;
+        }
+        .center{
+            width:200px;
+            height:200px;
+            border-radius:50%;
+            margin:3em auto;
+        }
+    </style>
+</head>
+<body>
+   <div class="container">
+       <div class="color blue"></div>
+              <div class="color green"></div>
+
+       <div class="color yellow"></div>
+       <div class="color red"></div>
+       <div class="color pink"></div>
+
+   </div>
+   <div class="center"></div>
+    <script>
+        const red = document.querySelector(".red");
+        const blue = document.querySelector(".blue");
+        const green = document.querySelector(".green");
+        const yellow = document.querySelector(".yellow");
+        const pink = document.querySelector(".pink");
+        const center = document.querySelector(".center");
+        const pickedColor = (color) =>{
+            return window.getComputedStyle(color).backgroundColor;
+        }
+        const changeColor = (div,color)=>{
+            
+            return div.addEventListener('mouseenter',()=>{
+                center.style.backgroundColor = color;
+            })
+            
+        }
+        changeColor(red,pickedColor(red));
+        changeColor(blue,pickedColor(blue));
+        changeColor(yellow,pickedColor(yellow));
+        changeColor(pink,pickedColor(pink));
+        changeColor(green,pickedColor(green));
+        
+        
+        const object = {
+            name:"kiran",
+            id : 19
+        }
+        console.log(object);
+    </script>
+</body>
+</html>
